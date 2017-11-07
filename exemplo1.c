@@ -20,22 +20,20 @@ double f3(double x[N])
 
 int main(int argc, char **argv)
 {
-	double x[N]={0}, xa[N]={1, -1, 1};
+	double x[N]={0}, xa[N]={0.1, 0.1, -0.1};
 	
 	double eps, tol, norm, norma;
 	
-	double (*equacao[N])()=(f1,f2,f3);
+	double (*equacao[N])()={f1, f2, f3};
 	
 	int i;
-
+	
+	printf("Vetor tentativa: \n");
 	for(i=0; i<N; i++)
 	{
 		x[i]=equacao[i](xa);
-	}
-	
-	for(i=0; i<N; i++)
-	{
 		printf("x[%d]= %lf \n ", i, x[i]);
 	}
+	
 }
 
